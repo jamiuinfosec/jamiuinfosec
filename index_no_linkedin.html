@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>JamiuInfosec — Jamiu Ibrahim</title>
+<style>
+  :root{
+    --bg:#050505;
+    --panel:#071009;
+    --neon:#39ff14;
+    --muted:#9aa19a;
+    --card:#0b0f0b;
+    --glass: rgba(255,255,255,0.02);
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  }
+  html,body{height:100%;margin:0;background:var(--bg);color:#d7f2d7;overflow-x:hidden}
+  #matrix { position:fixed; inset:0; z-index:0; }
+  .container{position:relative; z-index:2; max-width:920px; margin:48px auto; padding:28px; background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); border-radius:10px; box-shadow:0 10px 30px rgba(0,0,0,0.6); border:1px solid rgba(57,255,20,0.04);}
+  header{display:flex; align-items:center; gap:18px; margin-bottom:18px}
+  .logo{width:72px; height:72px; border-radius:8px; background:linear-gradient(180deg, rgba(57,255,20,0.04), rgba(57,255,20,0.02)); display:flex; align-items:center; justify-content:center; font-weight:700; color:var(--neon); border:1px solid rgba(57,255,20,0.08); font-family:monospace;}
+  h1{margin:0; font-size:20px; color:var(--neon); letter-spacing:0.6px}
+  .subtitle{margin:0;color:var(--muted); font-size:13px; margin-top:6px}
+  .typewriter{font-family: "Courier New", Courier, monospace; color:var(--neon); font-weight:600; margin-top:8px; font-size:16px; min-height:24px;}
+  .grid{display:grid; grid-template-columns: 1fr 320px; gap:18px; align-items:start;}
+  @media(max-width:820px){ .grid{grid-template-columns:1fr} .container{margin:18px;padding:18px} .logo{width:60px;height:60px}}
+  .card{background:var(--card); padding:16px; border-radius:8px; border:1px solid rgba(57,255,20,0.03)}
+  .section-title{color:var(--neon); font-weight:700; font-size:13px; margin-bottom:8px; letter-spacing:0.6px}
+  ul{margin:0;padding-left:18px;color:#cfe6cf}
+  .btn{display:inline-block; margin-top:10px; background:transparent; border:1px solid var(--neon); color:var(--neon); padding:10px 12px; border-radius:8px; text-decoration:none; font-weight:700; font-family:inherit}
+  .muted{color:var(--muted); font-size:13px}
+  footer{margin-top:22px; color:var(--muted); font-size:13px; text-align:center;}
+  .contact{display:flex; flex-direction:column; gap:8px}
+  .field{font-size:14px; color:#cfe6cf}
+  .green-dot{width:10px;height:10px;border-radius:50%;background:var(--neon);display:inline-block;margin-right:8px;box-shadow:0 0 6px rgba(57,255,20,0.12)}
+  .skills{display:flex; flex-wrap:wrap; gap:8px}
+  .chip{background:rgba(57,255,20,0.04); border:1px solid rgba(57,255,20,0.06); padding:6px 8px; border-radius:6px; color:#bfe9bf; font-size:13px; font-family:monospace}
+  .small{font-size:13px; color:#a6b8a6}
+  .projects p{margin:8px 0;color:#d6efd6}
+</style>
+</head>
+<body>
+<canvas id="matrix"></canvas>
+<div class="container" role="main">
+  <header>
+    <div class="logo">JI</div>
+    <div style="flex:1">
+      <h1>JamiuInfosec</h1>
+      <p class="subtitle">Cybersecurity Analyst &amp; IT Support Specialist — Nigeria (WAT)</p>
+      <div class="typewriter" id="typewriter"></div>
+    </div>
+    <div style="min-width:180px; text-align:right;">
+      <div class="card" style="padding:12px;">
+        <div class="small">Contact</div>
+        <div class="field"><span class="green-dot"></span>jamiuinfosec@gmail.com</div>
+        <a class="btn" id="viewPdf" href="JamiuInfosec_Cybersecurity_Portfolio.pdf" target="_blank" rel="noopener">View My Portfolio (PDF)</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="grid">
+    <div>
+      <section class="card">
+        <div class="section-title">Professional Summary</div>
+        <div class="small">I’m a passionate and detail-oriented Cybersecurity Analyst focused on protecting digital systems, data, and networks from cyber threats. I specialize in monitoring, detecting, and responding to security incidents, and I explain complex security topics in simple steps.</div>
+      </section>
+
+      <section class="card" style="margin-top:12px;">
+        <div class="section-title">Core Skills</div>
+        <div class="skills" aria-hidden="true">
+          <div class="chip">Network Security</div>
+          <div class="chip">SIEM / Wazuh</div>
+          <div class="chip">Incident Response</div>
+          <div class="chip">Vulnerability Assessment</div>
+          <div class="chip">Phishing Analysis</div>
+          <div class="chip">Linux &amp; Windows</div>
+          <div class="chip">SOC Operations</div>
+        </div>
+      </section>
+
+      <section class="card projects" style="margin-top:12px;">
+        <div class="section-title">Projects & Practical Experience</div>
+        <p><strong>Network Vulnerability Assessment (Home Lab)</strong> — Scanned a virtual network using Nmap and Nessus to identify open ports and security gaps and recommended improvements.</p>
+        <p><strong>SOC Monitoring Simulation</strong> — Set up a SIEM (Wazuh) in a test environment, detected simulated brute-force attacks and created incident reports.</p>
+        <p><strong>Phishing Awareness Training</strong> — Designed a short guide to help users recognise phishing emails and social engineering tactics.</p>
+      </section>
+
+      <section class="card" style="margin-top:12px;">
+        <div class="section-title">Certifications & Learning</div>
+        <div class="small">• Google Cybersecurity Professional Certificate (in progress)<br>• Codar Tech Africa – Cybersecurity Track (current)<br>• CompTIA Security+ (planned)<br>• TryHackMe / HackTheBox Labs</div>
+      </section>
+
+      <section class="card" style="margin-top:12px;">
+        <div class="section-title">Education</div>
+        <div class="small">Federal University of Agriculture, Abeokuta (FUNAAB) — B.Sc. Graduate</div>
+      </section>
+    </div>
+
+    <aside>
+      <div class="card">
+        <div class="section-title">Tools & Technologies</div>
+        <ul>
+          <li>Wireshark</li>
+          <li>Nmap</li>
+          <li>Metasploit</li>
+          <li>Burp Suite</li>
+          <li>Splunk / Wazuh</li>
+          <li>Kali Linux</li>
+          <li>Nessus</li>
+          <li>VirtualBox / VMware</li>
+        </ul>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <div class="section-title">Availability</div>
+        <div class="small">Available for: Remote or On-site roles. Seeking SOC Analyst or Junior Security roles that allow growth and continuous learning.</div>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <div class="section-title">Quick Links</div>
+        <div class="small"><a style="color:var(--neon); text-decoration:none;" href="mailto:jamiuinfosec@gmail.com">Email me</a></div>
+      </div>
+    </aside>
+  </div>
+
+  <footer>
+    © 2025 JamiuInfosec | All rights reserved
+  </footer>
+</div>
+
+<script>
+const text = "Jamiu Ibrahim — Cybersecurity Analyst";
+const target = document.getElementById('typewriter');
+let i = 0;
+function typeOnce(){
+  if(i < text.length){
+    target.textContent += text.charAt(i);
+    i++;
+    setTimeout(typeOnce, 70);
+  }
+}
+window.addEventListener('load', () => setTimeout(typeOnce, 400));
+
+const canvas = document.getElementById('matrix');
+const ctx = canvas.getContext('2d');
+let W, H;
+function resize(){ W = canvas.width = innerWidth; H = canvas.height = innerHeight; }
+resize();
+window.addEventListener('resize', resize);
+
+const cols = Math.floor(W / 16) + 1;
+const ypos = Array(cols).fill(0);
+
+function draw() {
+  ctx.fillStyle = "rgba(5,5,5,0.25)";
+  ctx.fillRect(0, 0, W, H);
+  ctx.fillStyle = "rgba(57,255,20,0.08)";
+  ctx.font = "14px monospace";
+  for (let i = 0; i < ypos.length; i++) {
+    const text = String.fromCharCode(65 + Math.random() * 33);
+    const x = i * 16;
+    ctx.fillText(text, x, ypos[i] * 16);
+    if (ypos[i] * 16 > H && Math.random() > 0.975) ypos[i] = 0;
+    ypos[i]++;
+  }
+  requestAnimationFrame(draw);
+}
+draw();
+</script>
+</body>
+</html>
